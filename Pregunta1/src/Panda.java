@@ -17,9 +17,8 @@ public class Panda {
         check(p1, p -> p.age < 5);
     }
 
-    //Metodo check() recibe por atributos un objeto Panda y una expresion Lambda,
-    //esta expresion Lambda(Predicate) lo que hace es comprobar si la condicion p.age < 5
-    //es true or false
+    //metodo check() recibe por atributos un objeto Panda y una expresion Lambda,
+    //esta expresion Lambda(p -> p.age < 5) lo que hace es retornar true or false
     private static void check(Panda panda,
                               Predicate<Panda> pred) {
         //Se le asigna a la variable result el valor "match" en el caso la expresion lambda sea true
@@ -27,7 +26,7 @@ public class Panda {
         String result =
                 pred.test(panda) ? "match" : "not match";
         //Finalmente imprimos el resultado, en este caso lo que se mostrara en consola es: "match"
-        // debido a que la expresion lambda(p.age < 5) nos da true
+        // debido a que la expresion lambda(p -> p.age < 5) nos da true
         System.out.print(result);
     }
 }
